@@ -1,0 +1,26 @@
+{
+  "name": "three-gltf-viewer",
+  "productName": "glTF Viewer",
+  "version": "1.0.0",
+  "description": "Provide a website for previewing glTF models using three.js, which supports a drag-and-drop interface.",
+  "main": "src/main.js",
+  "scripts": {
+      "dev": "parcel index.html --port 3000",
+      "test": ""
+  },
+  "keywords": [
+    "gltf",
+    "three.js",
+    "three",
+    "3d",
+    "model",
+    "modeling",
+    "webgl"
+  ],
+  "author": "hpcbitnut@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
