@@ -1,26 +1,39 @@
 {
-  "name": "three-gltf-viewer",
-  "productName": "glTF Viewer",
-  "version": "1.0.0",
-  "description": "Provide a website for previewing glTF models using three.js, which supports a drag-and-drop interface.",
-  "main": "src/main.js",
-  "scripts": {
-      "dev": "parcel index.html --port 3000",
-      "test": ""
-  },
-  "keywords": [
-    "gltf",
-    "three.js",
-    "three",
-    "3d",
-    "model",
-    "modeling",
-    "webgl"
-  ],
-  "author": "hpcbitnut@gmail.com",
-  "license": "MIT",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+    "name": "three-gltf-viewer",
+    "productName": "glTF Viewer",
+    "version": "1.0.0",
+    "description": "Provide a website for previewing glTF models using three.js, which supports a drag-and-drop interface.",
+    "main": "src/main.js",
+    "scripts": {
+        "dev": "webpack --config ./build/webpack.config.js",
+    },
+    "keywords": [
+        "gltf",
+        "three.js",
+        "three",
+        "3d",
+        "model",
+        "modeling",
+        "webgl"
+    ],
+    "author": "hpcbitnut@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "three": "^0.124.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "copy-webpack-plugin": "^7.0.0",
+        "eslint": "^7.17.0",
+        "html-webpack-plugin": "^4.5.1",
+        "terser-webpack-plugin": "^5.0.3",
+        "webpack": "^5.11.1",
+        "webpack-bundle-analyzer": "^4.3.0",
+        "webpack-cli": "^4.3.1",
+        "webpack-dev-middleware": "^4.0.2",
+        "webpack-dev-server": "^3.11.1",
+        "webpack-merge": "^5.7.3"
+    }
 }
