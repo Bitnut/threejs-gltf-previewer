@@ -3,10 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
+
 module.exports = {
-    entry: './src/index.js',
+    entry: ['@babel/polyfill', './src/index.js'],
     mode: 'development',
-    devtool: 'inline-source-map',
+    // devtool: 'inline-source-map',
+    devtool: 'eval-cheap-module-source-map',
+
 
     resolve: {
 
@@ -28,9 +31,21 @@ module.exports = {
     },
 
     module: {
-
         rules: [
-
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules\/(?!(three)\/).*/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env'],
+                        plugins: [
+                            "@babel/plugin-proposal-class-properties",
+                            "@babel/plugin-transform-classes"
+                        ]
+                    }
+                }
+            }
         ]
     },
     plugins: [
@@ -46,9 +61,16 @@ module.exports = {
         }),
     ],
 
-    optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()]
-    },
+    // optimization: {
+    //     minimize: true,
+    //     minimizer: [new TerserPlugin({
+    //     terserOptions: {
+    //       format: {
+    //         comments: false,
+    //       },
+    //     },
+    //     extractComments: false,
+    //   })]
+    // },
 
 };

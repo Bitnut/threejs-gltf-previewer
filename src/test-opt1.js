@@ -67,15 +67,15 @@ export default class init3D {
             background: false, // background 是是否显示场景背景
             envMapType: 'hdr',
             hemiLight: true,
-            ambientLight: true,
+            ambientLight: false,
             directLight: true,
             hemiColor: 0xFFFFFF,
             hemiGroundColor: 0x444444,
-            hemiIntensity: 0.5,
+            hemiIntensity: 0.01,
             ambientColor: 0xFFFFFF,
             ambientIntensity: 0.3,
             directColor: 0xFFFFFF,
-            directIntensity: 2, // 0.8 * Math.PI,
+            directIntensity: 0.01, // 0.8 * Math.PI,
             addLights: true,
             camera: 'default', // camera config, not used yet
             clip: false, // play clips, not used yet
@@ -227,16 +227,16 @@ export default class init3D {
 
                 }
 
-                console.log(this.cubeRenderTarget2.texture);
-                this.traverseMaterials(this.content, (material) => {
+                // this.traverseMaterials(this.content, (material) => {
 
-                    if (material.isMeshStandardMaterial || material.isGLTFSpecularGlossinessMaterial) {
+                //     if (material.isMeshStandardMaterial || material.isGLTFSpecularGlossinessMaterial) {
 
-                        material.envMap = this.cubeRenderTarget2.texture;
+                //         // material.envMap = this.cubeRenderTarget2.texture;
+                //         material.envMap = cubeTexture;
 
-                    }
+                //     }
 
-                });
+                // });
 
             });
 
